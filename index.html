@@ -1,325 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kumar Awanish – AI Scientist & ML Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --accent: #1565c0;
-      --light-accent: #e3f2fd;
-      --card-bg: #fff;
-      --shadow: 0 6px 30px 0 rgba(21,101,192,0.11);
-      --tag-bg: #e3eafd;
-    }
-    body {
-      background: var(--light-accent);
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #1b2836;
-      margin: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: var(--card-bg);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      padding: 40px 32px;
-    }
-    header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      border-bottom: 2px solid #e3eafd;
-      padding-bottom: 24px;
-      margin-bottom: 18px;
-    }
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      margin-right: 26px;
-      object-fit: cover;
-      background: #e3f2fd;
-    }
-    .title-area h1 {
-      margin: 0;
-      color: var(--accent);
-      font-size: 2.1rem;
-      letter-spacing: 1px;
-    }
-    .subtitle {
-      color: #5b6b80;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .contact-info {
-      margin-top: 10px;
-      font-size: 1rem;
-    }
-    .contact-info a {
-      color: var(--accent);
-      text-decoration: none;
-      margin-right: 14px;
-    }
-    section {
-      margin-bottom: 32px;
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-      color: var(--accent);
-      font-size: 1.27rem;
-      margin-bottom: 10px;
-      gap: 8px;
-    }
-    .card {
-      background: #f7faff;
-      border-radius: 12px;
-      box-shadow: 0 1px 5px #dbeefd44;
-      margin-bottom: 18px;
-      padding: 20px 20px 10px 20px;
-    }
-    ul, .skill-list, .lang-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .skill-list, .lang-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 22px;
-      font-size: 1rem;
-    }
-    .tag {
-      display: inline-block;
-      background: var(--tag-bg);
-      color: #264175;
-      font-size: 0.95em;
-      padding: 3px 11px;
-      border-radius: 8px;
-      margin-bottom: 3px;
-      margin-right: 5px;
-      font-weight: 500;
-    }
-    .job-title {
-      font-weight: 700;
-      color: #1a237e;
-    }
-    .org {
-      font-style: italic;
-      color: #5a7896;
-    }
-    .date, .loc {
-      color: #647491;
-      font-size: 0.95em;
-    }
-    @media (max-width: 600px) {
-      .container { padding: 9px; }
-      header { flex-direction: column; align-items: flex-start; }
-      .avatar { margin-right: 0; margin-bottom: 15px; }
-      .skill-list, .lang-list { flex-direction: column; gap: 6px; }
-    }
-    .section-title svg { width: 22px; height: 22px; opacity: 0.8; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Awanish | Machine Learning Engineer</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* CSS Variables for easy theme management */
+        :root {
+            --primary-color: #2c3e50; /* Darker blue-gray for header/footer */
+            --secondary-color: #3498db; /* Bright blue for accents */
+            --background-color: #ecf0f1; /* Light gray background */
+            --card-bg-color: #ffffff; /* White for cards */
+            --text-color: #34495e; /* Dark text */
+            --header-color: #ffffff; /* White text on dark header */
+            --timeline-color: #3498db; /* Blue for timeline line */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: var(--card-bg-color);
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- Header --- */
+        header {
+            background: var(--primary-color);
+            color: var(--header-color);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        /* Static Subtitle */
+        header .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+
+        header .contact-info {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        header .contact-info a {
+            color: var(--header-color);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        header .contact-info a:hover {
+            color: var(--primary-color);
+            background-color: var(--header-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- General Section Styling --- */
+        .section {
+            padding: 5rem 2rem;
+            padding-top: 6rem; /* Add padding to offset for sticky nav */
+        }
+        
+        #summary.section {
+            padding-top: 0; /* Remove top padding for the first section after the header */
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* --- Summary Section --- */
+        #summary {
+            background: var(--card-bg-color);
+            border-radius: 15px;
+            margin: -3rem auto 0;
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        #summary p {
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(44, 62, 80, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--background-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            width: 20px; /* Align icons */
+            text-align: center;
+        }
+
+        /* --- Experience Timeline --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--timeline-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 0;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: white;
+            border: 4px solid var(--timeline-color);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item:hover::after {
+            transform: scale(1.2);
+        }
+
+        .timeline-item.right::after {
+            left: -12px;
+        }
+        
+        .timeline-item.left::after {
+            right: -12px;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background-color: var(--card-bg-color);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+        }
+        
+        .timeline-content .company {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .timeline-content .date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(44, 62, 80, 0.12);
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content h3 {
+            color: var(--primary-color);
+        }
+
+        .project-content p {
+            margin: 1rem 0;
+        }
+
+        /* --- Education Section --- */
+        .education-grid {
+             display: flex;
+             justify-content: center;
+             gap: 2rem;
+             flex-wrap: wrap;
+        }
+        
+        .education-card {
+            background: var(--card-bg-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            width: 45%;
+            min-width: 300px;
+        }
+        
+        .education-card h3 {
+            color: var(--secondary-color);
+        }
+
+        /* --- Certifications Section --- */
+        #certifications {
+            background: var(--primary-color);
+            color: var(--header-color);
+        }
+        
+        #certifications .section-title::after {
+            background: var(--header-color);
+        }
+        
+        .certifications-list {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            text-align: center;
+        }
+        
+        .cert-item {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .cert-item i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background: #212f3d;
+            color: var(--header-color);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            header {
+                padding: 4rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2.8rem;
+            }
+            
+            header .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            header .contact-info {
+                gap: 1rem;
+            }
+            
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 10px;
+            }
+
+            .timeline-item.left, .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 8px;
+            }
+            
+            .education-card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- Header -->
-    <header>
-      <img src="https://avatars.githubusercontent.com/u/29281973?v=4" alt="Avatar" class="avatar">
-      <div class="title-area">
-        <h1>Kumar Awanish</h1>
-        <div class="subtitle">Senior AI Scientist · Machine Learning Engineer</div>
-        <div class="contact-info">
-          <a href="mailto:awanish00@gmail.com">awanish00@gmail.com</a> ·
-          <a href="tel:+4917647167989">+49 17647167989</a> ·
-          Berlin, Germany ·
-          <a href="https://github.com/awi2004" target="_blank">GitHub</a>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
         </div>
-      </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>KUMAR AWANISH</h1>
+            <p class="subtitle">Machine Learning Engineer | Data Scientist | MLOps</p>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/kumar.awanish/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/yourgithubusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:awanish00@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="tel:+4917647167989"><i class="fas fa-phone"></i> Phone</a>
+                <!-- Download CV Link - Ensure CV.pdf is in the same directory -->
+                <a href="CV.pdf" download="Kumar_Awanish_CV.pdf"><i class="fas fa-download"></i> Download CV</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Profile -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
-        Profile Summary
-      </div>
-      <div class="card">
-        Machine Learning Engineer/Data Scientist with 9+ years in GenAI, LLMs, MLOps, cloud deployments, predictive analytics, and scalable AI pipelines. Proven cross-functional leader passionate about actionable insights and innovation.
-      </div>
-    </section>
+    <main>
+        <section id="summary" class="section">
+            <p>Machine Learning Engineer/Data Scientist with 9+ years of experience in end-to-end data solutions, MLOps, predictive analysis and cloud deployments. Proven track record in cross-functional leadership, building ML pipelines, and transforming business objectives into actionable insights.</p>
+        </section>
 
-    <!-- Skills -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 20l2-2h9l2 2"/><path d="M12 3l2 5-2 2-2-2z"/><circle cx="12" cy="17" r="2"/><path d="M12 13v4"/></svg>
-        Technical Skills
-      </div>
-      <div class="card">
-        <ul class="skill-list">
-          <li><span class="tag">ML</span>Regression, Classification, Clustering, Ensembles</li>
-          <li><span class="tag">Deep Learning</span>Autoencoders, CNNs, RNNs</li>
-          <li><span class="tag">NLP & LLMs</span>Transformers, Langchain, RAG</li>
-          <li><span class="tag">Frameworks</span>Keras, PyTorch, Tensorflow, Scikit-Learn, Pandas, Numpy, Spacy</li>
-          <li><span class="tag">Visualization</span>Matplotlib, Plotly, Seaborn, Tableau, PowerBI</li>
-          <li><span class="tag">Programming</span>Python, PySpark, Flask, FastAPI, Streamlit, Java</li>
-          <li><span class="tag">Cloud & Data</span>AWS, Azure, Docker, Git, CI/CD, MLOps, Airflow, ETL, SQL, NoSQL</li>
-          <li><span class="tag">Testing</span>Unit Test, A/B tests, Pytest, JIRA</li>
-        </ul>
-      </div>
-    </section>
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming & Frameworks</h3>
+                        <ul>
+                            <li><i class="fab fa-python"></i> Python, Pyspark, Flask, FastAPI, Streamlit</li>
+                            <li><i class="fab fa-java"></i> Java, Unit Test</li>
+                            <li><i class="fas fa-chart-line"></i> Keras, PyTorch, Tensorflow, Transformers</li>
+                            <li><i class="fas fa-robot"></i> Scikit-Learn, Pandas, Numpy, Spacy</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
+                        <ul>
+                            <li><i class="fas fa-cogs"></i> ML (Regression, Classification, Clustering, Ensembles)</li>
+                            <li><i class="fas fa-layer-group"></i> Deep Learning (Autoencoders, CNNs, RNNs)</li>
+                            <li><i class="fas fa-language"></i> Natural Language Processing (NLP), LLMs</li>
+                            <li><i class="fas fa-search"></i> Retrieval-augmented generation (RAG), Langchain</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i> Cloud & MLOps</h3>
+                        <ul>
+                            <li><i class="fab fa-aws"></i> AWS (OpenSearch, Bedrock, Sagemaker)</li>
+                            <li><i class="fab fa-microsoft"></i> Azure</li>
+                            <li><i class="fab fa-docker"></i> Docker</li>
+                            <li><i class="fas fa-git-alt"></i> GIT, CI/CD, MLOps</li>
+                            <li><i class="fas fa-flask"></i> MLflow</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Data & ETL</h3>
+                        <ul>
+                            <li><i class="fas fa-exchange-alt"></i> ETL, ELT</li>
+                            <li><i class="fas fa-wind"></i> Apache Airflow</li>
+                            <li><i class="fas fa-bolt"></i> Apache Spark, Kinesis</li>
+                            <li><i class="fas fa-database"></i> SQL, NoSQL (Redis, DynamoDB)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-bar"></i> Visualization & Tools</h3>
+                        <ul>
+                            <li><i class="fas fa-chart-pie"></i> Matplotlib, Plotly, Seaborn</li>
+                            <li><i class="fas fa-chart-line"></i> Tableau, PowerBI</li>
+                            <li><i class="fas fa-ticket-alt"></i> JIRA</li>
+                            <li><i class="fas fa-flask"></i> A/B tests</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-comments"></i> Soft Skills & Languages</h3>
+                        <ul>
+                            <li><i class="fas fa-users"></i> Hard-working Team Player</li>
+                            <li><i class="fas fa-lightbulb"></i> Self-motivated, Quick Learner</li>
+                            <li><i class="fas fa-microphone"></i> Good communication skills</li>
+                            <li><i class="fas fa-globe"></i> English (Fluent), German (Beginner A2)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Work Experience -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4"/><path d="M8 3v4"/></svg>
-        Work Experience
-      </div>
-      <!-- Yara -->
-      <div class="card">
-        <div class="job-title">Senior Machine Learning Engineer <span class="org">@ Yara International</span></div>
-        <div class="date">May 2021 – Present · Berlin</div>
-        <ul>
-          <li>Led GenAI, RAG-based LLM recommendation platform on AWS Bedrock (↑ engagement 35%, ↓ manual effort 40%).</li>
-          <li>Architected ML infra with AWS CloudFormation, ECS, CI/CD (↓ cost 20%).</li>
-          <li>Developed real-time product recommender (VAE, +6% leads), built AWS ETL pipelines (↓ processing time 30%).</li>
-          <li>Mentored/managed junior team, drove technical interviews and growth culture.</li>
-        </ul>
-      </div>
-      <!-- BAM -->
-      <div class="card">
-        <div class="job-title">Data Scientist <span class="org">@ BAM</span></div>
-        <div class="date">Sep 2020 – Mar 2021 · Berlin</div>
-        <ul>
-          <li>Built ETL frameworks, ML models (CNN) for materials classification.</li>
-          <li>Collaborated with material experts for production-ready ML.</li>
-        </ul>
-      </div>
-      <!-- Dreamlines -->
-      <div class="card">
-        <div class="job-title">Data Scientist <span class="org">@ Dreamlines GmbH</span></div>
-        <div class="date">Nov 2019 – Mar 2020 · Hamburg</div>
-        <ul>
-          <li>Designed predictive recommender (XGBoost), cut newsletter costs 20%.</li>
-          <li>Led ETL, A/B test pipelines (Python, AWS, Tableau).</li>
-        </ul>
-      </div>
-      <!-- Fraunhofer -->
-      <div class="card">
-        <div class="job-title">Data Scientist <span class="org">@ Fraunhofer FOKUS</span></div>
-        <div class="date">Apr 2017 – Nov 2019 · Berlin</div>
-        <ul>
-          <li>Developed ML models (97% accuracy) for energy trading, blockchain contracts.</li>
-        </ul>
-      </div>
-      <!-- Samsung -->
-      <div class="card">
-        <div class="job-title">Senior Software Engineer <span class="org">@ Samsung R&D India</span></div>
-        <div class="date">Jul 2013 – Sep 2016 · Bangalore</div>
-        <ul>
-          <li>Built IoT web services, led 6-member automation team, delivered robust IT solutions.</li>
-        </ul>
-      </div>
-    </section>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Senior Machine Learning Engineer</h3>
+                            <p class="company">Yara International</p>
+                            <p class="date">May 2021 - Present | Berlin, Germany</p>
+                            <ul>
+                                <li>Developed and deployed an agentic RAG-based recommendation system using Large Language Models on AWS Bedrock, increasing engagement by 35% and reducing manual effort by 40%.</li>
+                                <li>Managed and scaled cloud-based ML infrastructure using AWS CloudFormation, Amazon ECS, and CI/CD pipelines, cutting cloud infrastructure costs by 20%.</li>
+                                <li>Led a cross-functional team for the development of a real-time product recommendation tool based on variational autoencoders (VAE) that generated 6% additional leads (sales).</li>
+                                <li>Designed and developed a data pipeline in AWS using ETL Glue, PySpark, Redshift Spectrum & CICD principles, resulting in a 30% decrease in processing time.</li>
+                                <li>Demonstrated strong mentorship capabilities by managing and coaching junior data scientists/engineers and conducting interviews.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Data Scientist</h3>
+                            <p class="company">Bundesanstalt für Materialforschung und -prüfung (BAM)</p>
+                            <p class="date">Sep 2020 - Mar 2021 | Berlin, Germany</p>
+                            <ul>
+                                <li>Developed an ETL framework and standard for digitalization of materials data.</li>
+                                <li>Implemented a machine learning-based model for classification of liquids and liquid-cooled glasses based on CNN architecture.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Data Scientist</h3>
+                            <p class="company">Dreamlines GmbH</p>
+                            <p class="date">Nov 2019 - Mar 2020 | Hamburg, Germany</p>
+                            <ul>
+                                <li>Designed an XGBoost based predictive recommendation tool, reducing newsletter sending cost by 20%.</li>
+                                <li>Designed ETL workflows and contributed to data modeling for data warehouse development.</li>
+                                <li>Set up A/B tests with the marketing team.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Data Scientist</h3>
+                            <p class="company">Fraunhofer FOKUS</p>
+                            <p class="date">Apr 2017 - Nov 2019 | Berlin, Germany</p>
+                            <ul>
+                                <li>Developed a machine learning model to predict user behavior for energy trading platform with 97% accuracy.</li>
+                                <li>Developed and deployed smart contracts for Blockchain-based Energy Transaction web service.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Senior Software Engineer</h3>
+                            <p class="company">Samsung R&D Institute India</p>
+                            <p class="date">Jul 2013 - Sep 2016 | Bangalore, India</p>
+                            <ul>
+                                <li>Developed web services for registering smartphone devices through Samsung Internet Of Things (S-IoT) platform.</li>
+                                <li>Spearheaded IT automation team that developed Tizen Automation Tool (TAT) to automate 90% of test cases.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Education -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10.98L12 16 2 10.98"/><path d="M22 10.98V17"/><path d="M2 10.98V17"/><path d="M12 16v6"/></svg>
-        Education
-      </div>
-      <div class="card">
-        <b>M.Sc. Computer Science (Data & Software Engineering)</b><br>
-        Technische Universität Berlin, 2016–2019, GPA: 1.6<br><br>
-        <b>B.Tech. Computer Science & Engineering</b><br>
-        Bangalore Institute of Technology, 2009–2013, 73.1%
-      </div>
-    </section>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Academic Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Master Thesis: Spatial & Temporal feature extraction for gaming Video Quality Assessment (VQA)</h3>
+                            <p>Goal: To extract the temporal & spatial features of Gaming videos and predict their video quality & complexity. Developed machine learning-based lightweight No-Reference (NR) metric, named BEG-VQ, outperforming state-of-the-art NR metrics.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Internet of Services Lab - Intrusion Detection</h3>
+                            <p>Objective: To implement and evaluate supervised & unsupervised machine learning methods for intrusion detection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Projects -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zM3 17h2v-2H3v2zm0-8h2V7H3v2zm4 0h14V7H7v2z"/></svg>
-        Academic Projects
-      </div>
-      <div class="card">
-        <b>Master Thesis:</b> Spatial & Temporal Feature Extraction for Gaming Video Quality Assessment (VQA)<br>
-        Developed a lightweight NRmetric (BEG-VQ) using machine learning to predict video quality & complexity, outperformed state-of-the-art.<br>
-        <span class="loc">TU Berlin, Apr 2019 – Nov 2019</span>
-      </div>
-      <div class="card">
-        <b>Internet of Services Lab:</b> Intrusion Detection via Supervised & Unsupervised ML<br>
-        Implemented and evaluated algorithms (Random Forest, Neural Networks) for cyber-attack detection on streaming data.<br>
-        <span class="loc">TU Berlin, Apr 2018 – Sep 2018</span>
-      </div>
-    </section>
+        <section id="education" class="section">
+             <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>M.Sc. in Computer Science (Data & Software Engineering)</h3>
+                        <p>Technische Universität Berlin, Germany</p>
+                        <p>2016 - 2019 | GPA: 1.6 (Highest:1)</p>
+                    </div>
+                    <div class="education-card">
+                        <h3>B.Tech. in Computer Science & Engineering</h3>
+                        <p>Bangalore Institute of Technology, India</p>
+                        <p>2009 - 2013 | 73.1%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Certifications -->
-  <section>
-    <div class="section-title">
-      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M8 16l2-2l4 4"/>
-      </svg>
-      Certifications
-    </div>
-    <div class="card">
-      <div class="skill-list">
-        <span class="tag">AWS Certified AI Practitioner</span>
-        <span class="tag">Astronomer Airflow 3 Fundamentals</span>
-        <span class="tag">Improving Deep Neural Networks (Coursera)</span>
-        <span class="tag">Neural Networks and Deep Learning (Coursera)</span>
-        <span class="tag">Structuring Machine Learning Projects (Coursera)</span>
-        <span class="tag">GCP Big Data & Machine Learning Fundamentals (Coursera)</span>
-        <!-- Add more as needed -->
-      </div>
-    </div>
-  </section>
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-list">
+                    <div class="cert-item"><i class="fab fa-aws"></i> AWS Certified AI Practitioner</div>
+                    <div class="cert-item"><i class="fas fa-wind"></i> Apache Airflow 3 Fundamentals (Astronomer)</div>
+                    <div class="cert-item"><i class="fas fa-award"></i> Improving Deep Neural Networks: Hyperparameter tuning. Regularization and Optimization (Coursera)</div>
+                    <div class="cert-item"><i class="fas fa-award"></i> Neural Networks and Deep Learning (Coursera)</div>
+                    <div class="cert-item"><i class="fas fa-award"></i> Structuring Machine Learning Projects (Coursera)</div>
+                    <div class="cert-item"><i class="fas fa-award"></i> Google Cloud Platform Big Data and Machine Learning Fundamentals (Coursera)</div>
+                </div>
+            </div>
+        </section>
 
+        <section id="miscellaneous" class="section">
+            <div class="container">
+                <h2 class="section-title">Miscellaneous</h2>
+                <div class="certifications-list">
+                    <div class="cert-item"><i class="fas fa-trophy"></i> Spot Award: Received SPOT AWARD in Samsung R&D Institute for outstanding performance in a project.</div>
+                    <div class="cert-item"><i class="fas fa-plane"></i> Hobbies: Travelling, Sports (Badminton, Cricket)</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <p>&copy; 2025 Kumar Awanish | Built with GitHub Pages</p>
+    </footer>
 
-    <!-- Languages -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10a15.3 15.3 0 0 1-4 10a15.3 15.3 0 0 1-4-10a15.3 15.3 0 0 1 4-10z"/></svg>
-        Languages
-      </div>
-      <div class="card">
-        <ul class="lang-list">
-          <li><span class="tag">English</span>Fluent</li>
-          <li><span class="tag">German</span>Beginner (A2)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Miscellaneous -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15 8.6 22 9.3 17 14 18.2 21 12 17.7 5.8 21 7 14 2 9.3 9 8.6 12 2"/></svg>
-        Miscellaneous
-      </div>
-      <div class="card">
-        <ul>
-          <li>Spot Award, Samsung R&D Institute for outstanding performance</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Hobbies -->
-    <section>
-      <div class="section-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
-        Hobbies
-      </div>
-      <div class="card">
-        Traveling (cultures, people, food) · Badminton · Cricket
-      </div>
-    </section>
-
-  </div>
 </body>
 </html>
